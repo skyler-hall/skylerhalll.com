@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, Sphere } from '@react-three/drei';
+import { OrbitControls, Sphere, Html } from '@react-three/drei';
 import { loadData } from '../utils/loadData';
 import * as THREE from 'three';
 
@@ -19,7 +19,9 @@ const GlobeContent = ({ dataPoints }) => {
     const globeRef = useRef();
 
     useFrame(() => {
-        globeRef.current.rotation.y += 0.001;
+        if (globeRef.current) {
+            globeRef.current.rotation.y += 0.001;
+        }    
     });
 
 
@@ -33,6 +35,11 @@ const GlobeContent = ({ dataPoints }) => {
             {dataPoints.map((point, index) => (
                 <Sphere key={index} args={[0.05, 32, 32]} position={point}>
                     <meshStandardMaterial color="red" />
+                    <Html distanceFactor={10}>
+                        <div className="tooltip">
+                            <span>Latitude: {point.lat}, Longitude: {point.lon}</span>
+                        </div>
+                    </Html>
                 </Sphere>
       ))}
             <OrbitControls />
@@ -45,9 +52,10 @@ const Globe = () => {
 
   useEffect(() => {
     loadData('/Marine protected areas.csv').then(data => {
-      const points = data.map(item => {
-        const { latitude, longitude } = item; // Adjust this if need to fit data
-        return latLongToVector3(latitude, longitude, 5, 0.1);
+        console.log(data);  
+        const points = data.map(item => {
+            const { latitude, longitude } = item; // Adjust this if need to fit data
+            return latLongToVector3(latitude, longitude, 5, 0.1);
       });
       setDataPoints(points);
     });
