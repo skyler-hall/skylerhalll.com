@@ -15,37 +15,47 @@ const latLongToVector3 = (lat, lon, radius, height) => {
   return new THREE.Vector3(x, y, z);
 };
 
+const GlobeContent = ({ dataPoints }) => {
+    const globeRef = useRef();
+
+    useFrame(() => {
+        globeRef.current.rotation.y += 0.001;
+    });
+
+
+    return (
+        <>
+            <ambientLight intensity={0.5} />
+            <directionalLight position={[10, 10, 5]} intensity={1} />
+            <Sphere ref={globeRef} args={[5, 32, 32]} position={[0, 0, 0]}>
+                <meshStandardMaterial color="blue" wireframe />
+            </Sphere>
+            {dataPoints.map((point, index) => (
+                <Sphere key={index} args={[0.05, 32, 32]} position={point}>
+                    <meshStandardMaterial color="red" />
+                </Sphere>
+      ))}
+            <OrbitControls />
+        </>
+    );
+};
+
 const Globe = () => {
-  const globeRef = useRef();
   const [dataPoints, setDataPoints] = useState([]);
 
   useEffect(() => {
     loadData('/Marine protected areas.csv').then(data => {
       const points = data.map(item => {
-        const { latitude, longitude } = item; // Adjust this to match your CSV structure
+        const { latitude, longitude } = item; // Adjust this if need to fit data
         return latLongToVector3(latitude, longitude, 5, 0.1);
       });
       setDataPoints(points);
     });
   }, []);
 
-  useFrame(() => {
-    globeRef.current.rotation.y += 0.001;
-  });
-
   return (
     <Canvas>
-      <ambientLight intensity={0.5} />
-      <directionalLight position={[10, 10, 5]} intensity={1} />
-      <Sphere ref={globeRef} args={[5, 32, 32]} position={[0, 0, 0]}>
-        <meshStandardMaterial color="blue" wireframe />
-      </Sphere>
-      {dataPoints.map((point, index) => (
-        <Sphere key={index} args={[0.05, 32, 32]} position={point}>
-          <meshStandardMaterial color="red" />
-        </Sphere>
-      ))}
-      <OrbitControls />
+      <GlobeContent dataPoints={dataPoints} />
     </Canvas>
   );
 };
