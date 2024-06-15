@@ -42,7 +42,7 @@ const GlobeContent = ({ dataPoints }) => {
                     </Html>
                 </Sphere>
       ))}
-            <OrbitControls />
+            <OrbitControls enableZoom={true} minDistance={5.2} maxDistance={10} enablePan={true} />
         </>
     );
 };
@@ -55,14 +55,14 @@ const Globe = () => {
         console.log(data);  
         const points = data.map(item => {
             const { latitude, longitude } = item; // Adjust this if need to fit data
-            return latLongToVector3(latitude, longitude, 5, 0.1);
+            return { ...item, position: latLongToVector3(latitude, longitude, 5, 0.1) };
       });
       setDataPoints(points);
     });
   }, []);
 
   return (
-    <Canvas>
+    <Canvas camera={{ position: [0, 0, 15], fov: 75 }}>
       <GlobeContent dataPoints={dataPoints} />
     </Canvas>
   );
