@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: #282c34;
+  background-color: black;
   color: white;
   height: 100vh;
   display: flex;
@@ -33,4 +33,9 @@ canvas {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   color: black;
   font-size: 12px;
+}
+
+.latitudelongitude {
+  color: midnightblue;
+  font-size: x-large;
 }

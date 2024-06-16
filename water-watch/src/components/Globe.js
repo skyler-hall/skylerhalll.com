@@ -4,6 +4,7 @@ import { OrbitControls, Sphere, Html } from '@react-three/drei';
 import { TextureLoader } from 'three';
 import { loadData } from '../utils/loadData';
 import * as THREE from 'three';
+import '../App.css';
 
 const latLongToVector3 = (lat, lon, radius, height) => {
   const phi = (lat * Math.PI) / 180;
@@ -38,7 +39,7 @@ const GlobeContent = ({ dataPoints, texture }) => {
                     <meshStandardMaterial color="red" />
                     <Html distanceFactor={10}>
                         <div className="tooltip">
-                            <span>Latitude: {point.lat}, Longitude: {point.lon}</span>
+                            <span className="latitudelongitude">Latitude: {point.lat} Longitude: {point.lon}</span>
                         </div>
                     </Html>
                 </Sphere>
