@@ -57,17 +57,14 @@ button {
 
 button:hover {
     background-color: #0056b3;
+    cursor: pointer;
 }
 
-#result {
-    margin-top: 20px;
-    font-size: 16px;
-    color: #333;
-}
-
-#header {
-  align-items: justify;
-
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
 }
 
 @media screen and (max-width: 1024px) {
