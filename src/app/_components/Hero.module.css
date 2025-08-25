@@ -1,0 +1,108 @@
+/* Cleaned hero styles extracted from About.module.css */
+.section {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.container {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-align: center;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-direction: column-reverse;
+}
+
+@media (min-width: 768px) {
+  .content {
+    flex-direction: row;
+    text-align: left;
+  }
+}
+
+.text {
+  flex: 1 1 50%;
+}
+
+.title {
+  font-size: 2.25rem;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 0.25rem;
+  line-height: 1.02;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 3.5rem;
+  }
+}
+
+.gradient {
+  background: linear-gradient(to right, var(--neonPurple), var(--neonBlue));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.smallTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  color: #9CA3AF;
+  font-size: 1.125rem;
+  max-width: 42rem;
+  margin-top: 1rem;
+}
+
+.photoWrapper {
+  flex: 0 0 50%;
+  max-width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 3px solid rgba(255,255,255,0.06);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.photo:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.7);
+}
+
+@media (max-width: 767px) {
+  .photoWrapper {
+    flex: 0 0 auto;
+    max-width: 320px;
+    width: 80%;
+  }
+
+  .photo {
+    width: 100%;
+    height: auto;
+  }
+}

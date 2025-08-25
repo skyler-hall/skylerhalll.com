@@ -1,0 +1,68 @@
+/* Header.module.css */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  padding: 1rem 0;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #1F2937; /* Tailwind's gray-800 */
+}
+
+.nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-size: 1.5rem; /* approximates text-2xl */
+  font-weight: bold;
+  color: white;
+  transition: color 0.3s;
+}
+
+.brand:hover {
+  color: #00eaff; /* neon blue */
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-size: 1.125rem; /* approximates text-lg */
+}
+
+.navLink {
+  color: #D1D5DB; /* approximates text-gray-300 */
+  transition: color 0.3s;
+  text-decoration: none;
+}
+
+.navLink:hover {
+  color: white;
+}
+
+.iconContainer {
+  display: flex;
+  gap: 1rem;
+}
+
+.iconLink {
+  color: #D1D5DB;
+  transition: color 0.3s;
+  text-decoration: none;
+}
+
+.iconLink:hover {
+  color: white;
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: currentColor;
+}

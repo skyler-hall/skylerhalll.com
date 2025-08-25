@@ -1,22 +1,18 @@
-import styles from './Hero.module.css';
+import styles from './About.module.css';
 
-export default function Hero() {
+const About = () => {
   return (
-    <section id="hero" className={styles.section}>
+    <section id="about" className={styles.section}>
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={styles.text}>
             <h1 className={styles.title}>
-              Skyler Hall
             </h1>
-            <div className={styles.smallTitle}>
+            <h1 className={styles.smallTitle}>
               <span className={styles.gradient}>Fullstack Developer / Inventor</span>
-            </div>
+            </h1>
             <p className={styles.subtitle}>
-              Computer Science student at Florida International University, graduating December 2026.
-            </p>
-            <p className={styles.subtitle}>
-              Software Engineer Intern, Google Tech Exchange, Management Leadership for Tomorrow. Passionate about impactful software and diverse teams.
+              Computer Science student at Florida International University (Dec 2026) with a passion for building beautiful, functional, and user-centric web applications.
             </p>
           </div>
 
@@ -27,4 +23,6 @@ export default function Hero() {
       </div>
     </section>
   );
-}
+};
+
+export default About;
