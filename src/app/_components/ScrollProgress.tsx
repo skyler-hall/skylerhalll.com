@@ -1,46 +1,65 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import styles from './ScrollProgress.module.css';
 
 const ScrollProgress = () => {
-  const [scrollTop, setScrollTop] = useState(0);
+  const pathRef = useRef<SVGPathElement>(null);
+  const [pathLength, setPathLength] = useState(0);
+
+  // Set the path length once the component mounts and the ref is available
+  useEffect(() => {
+    if (pathRef.current) {
+      const length = pathRef.current.getTotalLength();
+      setPathLength(length);
+      pathRef.current.style.strokeDasharray = `${length} ${length}`;
+      pathRef.current.style.strokeDashoffset = `${length}`;
+    }
+  }, []);
 
   const handleScroll = () => {
     const position = window.pageYOffset;
     const documentHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = (position / documentHeight);
-    setScrollTop(scrolled);
+    const scrollPercentage = position / documentHeight;
+    
+    if (pathRef.current) {
+        const drawLength = pathLength * scrollPercentage;
+        pathRef.current.style.strokeDashoffset = (pathLength - drawLength).toString();
+    }
   };
 
+  // Add and remove the scroll event listener
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    if (pathLength > 0) {
+        window.addEventListener('scroll', handleScroll, { passive: true });
+    }
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
-
-  const drips = [
-    { size: 30, speed: 1.1 },
-    { size: 25, speed: 1.3 },
-    { size: 20, speed: 1.5 },
-    { size: 35, speed: 0.9 },
-    { size: 28, speed: 1.2 },
-  ];
+  }, [pathLength]); // Rerun when pathLength is set
 
   return (
-    <div className={styles.gooContainer}>
-      {drips.map((drip, index) => (
-        <div
-          key={index}
-          className={styles.drip}
-          style={{
-            width: `${drip.size}px`,
-            height: `${drip.size}px`,
-            top: `calc(${scrollTop * 100 * drip.speed}% - ${drip.size}px)`,
-          }}
+    <div className={styles.wavyContainer}>
+      <svg width="30" height="100%" viewBox="0 0 30 1080" preserveAspectRatio="xMinYMin slice">
+         <defs>
+          <linearGradient id="metallicGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#f0f0f0" />
+            <stop offset="20%" stopColor="#b0b0b0" />
+            <stop offset="50%" stopColor="#d0d0d0" />
+            <stop offset="80%" stopColor="#a0a0a0" />
+            <stop offset="100%" stopColor="#f0f0f0" />
+          </linearGradient>
+        </defs>
+        {/* A simple wavy path that spans the full view height */}
+        <path
+          ref={pathRef}
+          d="M 15,0 C -15,180 45,360 15,540 S -15,900 15,1080"
+          stroke="url(#metallicGradient)"
+          strokeWidth="3"
+          fill="none"
+          className={styles.wavyPath}
         />
-      ))}
+      </svg>
     </div>
   );
 };

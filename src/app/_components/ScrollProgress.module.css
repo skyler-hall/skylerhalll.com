@@ -1,40 +1,13 @@
-.gooContainer {
+.wavyContainer {
   position: fixed;
   top: 0;
   left: 0;
-  width: 50px; /* Wider to contain the effect */
-  height: 100%;
-  filter: url(#goo); /* The SVG filter */
+  height: 100vh;
+  width: 30px;
   z-index: 1000;
-  pointer-events: none; /* Allow clicks to pass through */
+  pointer-events: none;
 }
 
-.drip {
-  position: absolute;
-  left: 15px; /* Centered in the container */
-  border-radius: 50%;
-  background: linear-gradient(
-    180deg,
-    #d0d0d0,
-    #f0f0f0,
-    #d0d0d0,
-    #b0b0b0,
-    #c0c0c0,
-    #a0a0a0,
-    #b0b0b0,
-    #d0d0d0,
-    #f0f0f0
-  );
-  background-size: 100% 200%;
-  animation: metallicShine 2s linear infinite;
-  transition: top 0.1s linear; /* Smooth movement */
-}
-
-@keyframes metallicShine {
-  0% {
-    background-position: 0% 0%;
-  }
-  100% {
-    background-position: 0% -100%;
-  }
+.wavyPath {
+  transition: stroke-dashoffset 0.1s linear;
 }
