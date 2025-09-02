@@ -3,17 +3,30 @@ const Experience = () => {
     {
       role: "Software Engineer Intern",
       company: "Vanguard",
+      date: "May 2025 – August 2025",
       description: [
-        "Co-developed a full-stack Appian tool for request management.",
-        "Designed a centralized dashboard with real-time status updates.",
-        "Developed a user-facing intake app to standardize request submissions."
+        "Co-developed Application Processor, a full-stack Appian tool to streamline intake tracking for 50+ internal apps.",
+        "Built Record Types, Interfaces, and Process Models to track requests, app records, and enhancement submissions.",
+        "Developed a user-facing intake app to standardize request submissions across departments.",
+        "Designed a centralized dashboard with real-time status updates and automated notifications to improve requester visibility.",
+        "Participated in a hackathon, developing an Angular front-end integrated with Flask and Bedrock to process tax documents and display savings reports."
       ]
     },
     {
-      role: "Teaching Assistant, Programming 2",
-      company: "Florida International University",
+      role: "Team Lead",
+      company: "Recyclepedia",
+      date: "Sep 2024 – Dec 2024",
       description: [
-        "Taught JavaScript and Python to middle and high school students."
+        "Led a team of 12 developers to redevelop the Recyclepedia website and create an iOS/Android app using React, React Native, Next.js, and Tailwind CSS.",
+        "Managed the development of the site's structure and features, resulting in a more engaging platform that improved user interaction."
+      ]
+    },
+    {
+      role: "Teaching Assistant",
+      company: "Florida International University",
+      date: "Aug 2024 – Dec 2024",
+      description: [
+        "Supported 56 students in Programming 2 (Java), holding weekly office hours to clarify OOP concepts and provide individualized guidance."
       ]
     }
   ];
@@ -21,7 +34,7 @@ const Experience = () => {
   return (
     <section id="experience" className="section">
       <div className="section-container">
-  <h2 className="section-heading">Experience</h2>
+        <h2 className="section-heading">Experience</h2>
         <div className="section-body" style={{ textAlign: 'center', marginBottom: '1.25rem' }}>
           <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--neonBlue)', fontWeight: 700 }}>
             View My Resume
@@ -30,7 +43,7 @@ const Experience = () => {
         <div className="timeline">
           {experiences.map((exp, index) => (
             <div key={index} className="timeline-item">
-              <div className="timeline-date">{index === 0 ? 'August 2024 - Present' : index === 1 ? 'June 2024 - August 2024' : ''}</div>
+              <div className="timeline-date">{exp.date}</div>
               <div className="timeline-content">
                 <h3 className="job-title section-heading">{exp.role}</h3>
                 <div className="company section-body">{exp.company}</div>
