@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import ScrollProgress from "./_components/ScrollProgress";
 import Header from "./_components/Header";
 import Footer from "./_components/Footer";
 
@@ -18,7 +19,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="!scroll-smooth">
-  <body className={`${inter.className} site-dark`} style={{ backgroundColor: '#000' }}>
+      <body className={`${inter.className} site-dark`} style={{ backgroundColor: '#000' }}>
+        <ScrollProgress />
         <div className="flex flex-col min-h-screen">
           <Header />
           <main className="flex-grow w-full">

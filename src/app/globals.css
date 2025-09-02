@@ -12,11 +12,26 @@ body {
   color: #D1D5DB; /* text-gray-300 */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(300deg, #000000, #0d001a, #000d1a, #000000);
+  background-size: 240% 240%;
+  animation: gradient-animation 16s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Stronger dark-mode wrapper to override accidental light rules */
 .site-dark {
-  background-color: #000 !important;
+  background-color: transparent !important; /* Let the body's gradient show through */
   color: #D1D5DB !important;
 }
 
