@@ -1,23 +1,18 @@
-.scrollContainerLeft,
-.scrollContainerRight {
+.gooContainer {
   position: fixed;
   top: 0;
-  width: 10px; /* Width of the scrollbar container */
-  height: 100%;
-  background-color: #222; /* Background of the container */
-  z-index: 1000;
-}
-
-.scrollContainerLeft {
   left: 0;
+  width: 50px; /* Wider to contain the effect */
+  height: 100%;
+  filter: url(#goo); /* The SVG filter */
+  z-index: 1000;
+  pointer-events: none; /* Allow clicks to pass through */
 }
 
-.scrollContainerRight {
-  right: 0;
-}
-
-.scrollProgress {
-  width: 100%;
+.drip {
+  position: absolute;
+  left: 15px; /* Centered in the container */
+  border-radius: 50%;
   background: linear-gradient(
     180deg,
     #d0d0d0,
@@ -31,8 +26,8 @@
     #f0f0f0
   );
   background-size: 100% 200%;
-  transition: height 0.1s ease-out;
   animation: metallicShine 2s linear infinite;
+  transition: top 0.1s linear; /* Smooth movement */
 }
 
 @keyframes metallicShine {

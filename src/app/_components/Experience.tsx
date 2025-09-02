@@ -36,7 +36,7 @@ const Experience = () => {
       <div className="section-container">
         <h2 className="section-heading">Experience</h2>
         <div className="section-body" style={{ textAlign: 'center', marginBottom: '1.25rem' }}>
-          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--neonBlue)', fontWeight: 700 }}>
+          <a href="/Skyler Hall's Current Resume.pdf" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--neonBlue)', fontWeight: 700 }}>
             View My Resume
           </a>
         </div>
