@@ -3,8 +3,8 @@ const Projects = () => {
     {
       title: "Spotify Data Visualizer",
       description: "Created and led a project to teach the fundamentals of HTML, CSS, and JavaScript using Chart.js to convert a music dataset into interactive charts.",
-      link: "#",
-      image: "/project-1.svg"
+      link: "https://spotify-data-visualizer.com",
+      image: "/spotify-data-visualizer.png"
     },
     {
       title: "Recyclepedia",

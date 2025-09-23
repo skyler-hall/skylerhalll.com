@@ -13,10 +13,14 @@ export default function Hero() {
               <span className={styles.gradient}>Fullstack Developer / Inventor</span>
             </div>
             <p className={styles.subtitle}>
-              Computer Science student at Florida International University, graduating December 2026.
+              Computer Science student at Florida International 
+              University, graduating December 2026.
             </p>
             <p className={styles.subtitle}>
-              Software Engineer Intern, Google Tech Exchange, Management Leadership for Tomorrow. Passionate about impactful software and diverse teams.
+              Student who enjoys creating fun and engaging projects that contribute to social good,
+              Apart of Google Tech Exchange, Management Leadership for Tomorrow, Colorstack, and Codepath.
+              Passionate about impactful software and diverse teams. Outside of work he enjoys watching video essays,
+              going to the gym, and traveling!
             </p>
           </div>
 
