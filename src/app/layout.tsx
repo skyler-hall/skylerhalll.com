@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: "Skyler Hall",
   description: "Personal portfolio of a software engineer.",
   icons: {
-    icon: '/Favicon.png',
+    icon: '/Whiteravenfavicon.png',
   },
 };
 
@@ -23,7 +23,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="!scroll-smooth">
       <body className={`${inter.className} site-dark`} style={{ backgroundColor: '#000' }}>
-        <ScrollProgress />
         <div className="flex flex-col min-h-screen">
           <Header />
           <main className="flex-grow w-full">
@@ -31,6 +30,7 @@ export default function RootLayout({
           </main>
           <Footer />
         </div>
+        <ScrollProgress />
       </body>
     </html>
   );
