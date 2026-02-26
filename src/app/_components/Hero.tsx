@@ -18,7 +18,7 @@ export default function Hero() {
             </p>
             <p className={styles.subtitle}>
               Student who enjoys creating fun and engaging projects that contribute to social good,
-              Apart of Google Tech Exchange, Management Leadership for Tomorrow, Colorstack, and Codepath.
+              apart of Google Tech Exchange, Management Leadership for Tomorrow, Colorstack, and Codepath.
               Passionate about impactful software and diverse teams. Outside of work he enjoys watching video essays,
               going to the gym, and traveling!
             </p>
