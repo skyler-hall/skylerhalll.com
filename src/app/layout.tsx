@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: "Skyler Hall",
   description: "Personal portfolio of a software engineer.",
   icons: {
-    icon: '/Whiteravenfavicon.png',
+    icon: "/Favicon.png",
   },
 };
 
