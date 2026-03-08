@@ -63,16 +63,3 @@ const Projects = () => (
 );
 
 export default Projects;
-                >
-                  Check it out! &rarr;
-                </a>
-              </div>
-            </div>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
-);
-
-export default Projects;
