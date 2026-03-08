@@ -29,7 +29,6 @@ export default function RootLayout({
           </main>
           <Footer />
         </div>
-        <ScrollProgress />
       </body>
     </html>
   );
