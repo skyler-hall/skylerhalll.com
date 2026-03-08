@@ -15,7 +15,6 @@ body {
   background: linear-gradient(300deg, #000000, #0d001a, #000d1a, #000000);
   background-size: 240% 240%;
   animation: gradient-animation 16s ease infinite;
-  background-repeat: no-repeat;
 }
 
 @keyframes gradient-animation {
@@ -30,6 +29,17 @@ body {
   }
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+html::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+html {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 /* Stronger dark-mode wrapper to override accidental light rules */
 .site-dark {
   background-color: transparent !important; /* Let the body's gradient show through */
@@ -37,6 +47,12 @@ body {
 }
 
 .site-dark a { color: inherit; }
+
+/* site-wide background gradient similar to reference */
+body {
+  background-image: linear-gradient(180deg, rgba(18,18,20,0.95) 0%, rgba(7,7,10,1) 100%);
+  background-repeat: no-repeat;
+}
 
 @layer components {
   /* .section-title is defined later with explicit rules */
@@ -116,6 +132,21 @@ body {
   text-align: left;
 }
 
+.resume-cta {
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.resume-link {
+  color: var(--neonBlue);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.resume-link:hover {
+  text-decoration: underline;
+}
+
 /* Timeline (Experience) */
 .timeline {
   width: 100%;
@@ -131,15 +162,25 @@ body {
   align-items: start;
 }
 
+.timeline-item::before,
+.timeline-item::after {
+  display: none !important;
+}
+
+.timeline-date::before,
+.timeline-date::after {
+  display: none !important;
+}
+
 .timeline-date {
   color: #94A3B8; /* muted */
   font-size: 0.95rem;
   padding-top: 0.5rem;
+  border-left: none;
 }
 
 .timeline-content {
   background: rgba(17,24,39,0.6);
-  border: 1px solid rgba(255,255,255,0.04);
   padding: 1.25rem;
   border-radius: 0.5rem;
 }
@@ -200,3 +241,4 @@ body {
 .project-info p {
   color: #9CA3AF;
 }
+
