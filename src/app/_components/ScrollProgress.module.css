@@ -1,13 +1,29 @@
 .wavyContainer {
   position: fixed;
   top: 0;
-  left: 0;
+  left: calc((100vw - 1200px) / 2 - 50px);
   height: 100vh;
   width: 30px;
-  z-index: 1000;
+  z-index: 99999;
   pointer-events: none;
+  overflow: visible;
+  isolation: isolate;
+  transform: translateZ(0);
+}
+
+@media (max-width: 1300px) {
+  .wavyContainer {
+    left: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .wavyContainer {
+    left: 10px;
+  }
 }
 
 .wavyPath {
   transition: stroke-dashoffset 0.1s linear;
+  overflow: visible;
 }

@@ -9,15 +9,15 @@ const PROJECTS: readonly Project[] = [
   {
     title: "Spotify Data Visualizer",
     description:
-      "A web app that visualizes Spotify music data using interactive charts. Built with Chart.js, HTML, CSS, and JavaScript. Try it live at the link below!",
-    link: "https://spotify-data-visualizer.com/",
-    image: "/project-1.svg",
+      "Created and led a project to teach the fundamentals of HTML, CSS, and JavaScript using Chart.js to convert a music dataset into interactive charts.",
+    link: "https://spotify-data-visualizer.com",
+    image: "/spotify-data-visualizer.png",
   },
   {
     title: "Recyclepedia",
     description:
       "Led a team in collaboration with Miami-Dade County to redevelop their Recyclepedia website, resulting in 200 new active monthly users. The project used React, Firebase, Tailwind, and Next.js.",
-    link: "https://recyclepediamdc.com/en",
+    link: "https://recyclepediamdc.netlify.app/en",
     image: "/RecyclepediaSS.png",
   },
   {
@@ -50,6 +50,19 @@ const Projects = () => (
                   className="text-neonBlue font-semibold hover:underline"
                   target="_blank"
                   rel="noreferrer"
+                >
+                  Check it out! &rarr;
+                </a>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+export default Projects;
                 >
                   Check it out! &rarr;
                 </a>

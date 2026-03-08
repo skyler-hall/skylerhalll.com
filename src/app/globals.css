@@ -15,6 +15,7 @@ body {
   background: linear-gradient(300deg, #000000, #0d001a, #000d1a, #000000);
   background-size: 240% 240%;
   animation: gradient-animation 16s ease infinite;
+  background-repeat: no-repeat;
 }
 
 @keyframes gradient-animation {
@@ -36,12 +37,6 @@ body {
 }
 
 .site-dark a { color: inherit; }
-
-/* site-wide background gradient similar to reference */
-body {
-  background-image: linear-gradient(180deg, rgba(18,18,20,0.95) 0%, rgba(7,7,10,1) 100%);
-  background-repeat: no-repeat;
-}
 
 @layer components {
   /* .section-title is defined later with explicit rules */
@@ -205,4 +200,3 @@ body {
 .project-info p {
   color: #9CA3AF;
 }
-
