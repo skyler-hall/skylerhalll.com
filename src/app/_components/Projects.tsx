@@ -24,7 +24,7 @@ const PROJECTS: readonly Project[] = [
     title: "DriveWise",
     description:
       "Led a team to develop a route-planning tool that notifies users of commute times based on desired thresholds. The project integrated the Google Directions API and the Twilio API.",
-    link: "#",
+    link: "https://drivewise.miami/",
     image: "/project-3.svg",
   },
 ];
